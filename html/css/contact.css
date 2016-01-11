@@ -1,0 +1,15 @@
+/*
+# 6Maps module by Team of Six, balbooa.com
+# ------------------------------------------------------------------------
+# author    Balbooa http://www.balbooa.com/
+# Copyright@2013 balbooa.com.  All Rights Reserved.
+# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Websites: http://www.balbooa.com/
+*/
+#six_status {color:green; font-weight: bold}
+.clear{clear:both;}
+#dynamic_recaptcha_1+#six_status+#sp_qc_submit,
+#dynamic_recaptcha_1+#six_status{margin-top: 9px;}
+#six_status .error,
+#six_message,#six_email,#six_name{color:red}
+.pre_text,.below_text{margin: 9px 0;}
