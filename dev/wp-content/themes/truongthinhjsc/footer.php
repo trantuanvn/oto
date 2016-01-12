@@ -1,5 +1,6 @@
 <div id="footer">
          <div id="wrapper" class="container">
+          <div style="color:#fff"><?php get_sidebar( 'sidebar-2' ); ?> aaa</div>
             <!--<div class="row-fluid">
                <div class="span4">
                   <div class="moduletable">
