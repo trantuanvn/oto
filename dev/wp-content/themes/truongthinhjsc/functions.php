@@ -405,64 +405,7 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
-
-add_action( 'init', 'register_post_type_products' );
-
-function register_post_type_products() {
-	$labels = array(
-		'name'               => _x( 'Sản phẩm', 'post type general name', 'your-plugin-textdomain' ),
-		'singular_name'      => _x( 'Sản phẩm', 'post type singular name', 'your-plugin-textdomain' ),
-		'menu_name'          => _x( 'Sản phẩm', 'admin menu', 'your-plugin-textdomain' ),
-		'name_admin_bar'     => _x( 'Sản phẩm', 'add new on admin bar', 'your-plugin-textdomain' ),
-		'add_new'            => _x( 'Tạo mới', 'Sản phẩm', 'your-plugin-textdomain' ),
-		'add_new_item'       => __( 'Tạo mới Sản phẩm', 'your-plugin-textdomain' ),
-		'new_item'           => __( 'Mới Sản phẩm', 'your-plugin-textdomain' ),
-		'edit_item'          => __( 'Sửa Sản phẩm', 'your-plugin-textdomain' ),
-		'view_item'          => __( 'Xem Sản phẩm', 'your-plugin-textdomain' ),
-		'all_items'          => __( 'Tất cả Sản phẩm', 'your-plugin-textdomain' ),
-		'search_items'       => __( 'Tìm kiếm Sản phẩm', 'your-plugin-textdomain' ),
-		'parent_item_colon'  => __( 'Parent Sản phẩm:', 'your-plugin-textdomain' ),
-		'not_found'          => __( 'No Sản phẩm found.', 'your-plugin-textdomain' ),
-		'not_found_in_trash' => __( 'No Sản phẩm found in Trash.', 'your-plugin-textdomain' )
-	);
-
-	$args = array(
-		'labels'             => $labels,
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'Sản phẩm' ),
-		'capability_type'    => 'post',
-		'has_archive'        => true,
-		'hierarchical'       => false,
-		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt',  )
-	);
-
-	register_post_type( 'Sản phẩm', $args );
-}
-add_action('init', 'create_product_category',0);
-function create_product_category() {
-	$taxonomylabels = array(
-		'name' => _x('Loại Sản Phẩm','Loại Sản Phẩm'),
-		'singular_name' => _x('Category','Loại Sản Phẩm'),
-		'search_items' => __('Search Category'),
-		'all_items' => __('All Categories'),
-		'edit_item' => __('Edit Category'),
-		'add_new_item' => __('Add New'),
-		'menu_name' => __('Product Categories'),
-	);
-
-	$args = array(
-		'labels' => $taxonomylabels,
-		'hierarchical' => true,
-		'rewrite' => true
-	);
-	register_taxonomy('loai-san-pham','san-pham',$args);
-	flush_rewrite_rules( false );
-}
+add_filter('category_rewrite_rules' , 'mp_add_rules' ) ;
 
 function mp_add_rules($rules)
 {
@@ -477,4 +420,98 @@ function mp_add_rules($rules)
 		}
 	}
 	return $rules;
+}
+
+add_action('init', 'create_product' );
+add_action('init', 'create_product_category',0);
+function create_product() {
+	register_post_type( 'san-pham',
+		array(
+			'labels' => array(
+				'name' => __( 'Sản Phẩm' ),
+				'singular_name' => __( 'Sản Phẩm' )
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'san-pham'),
+			'supports' => array('title','editor','thumbnail','page-attributes'),
+		)
+	);
+	flush_rewrite_rules( false );
+}
+
+function create_product_category() {
+	$taxonomylabels = array(
+		'name' => _x('Loại Sản Phẩm','Loại Sản Phẩm'),
+		'singular_name' => _x('Category','Loại Sản Phẩm'),
+		'search_items' => __('Search Category'),
+		'all_items' => __('All Categories'),
+		'edit_item' => __('Edit Category'),
+		'add_new_item' => __('Add New'),
+		'menu_name' => __('Loại sản phẩm'),
+	);
+
+	$args = array(
+		'labels' => $taxonomylabels,
+		'hierarchical' => true,
+		'rewrite' => true
+	);
+	register_taxonomy('loai-san-pham','san-pham',$args);
+	flush_rewrite_rules( false );
+}
+
+add_action('init', 'create_product_hot' );
+function create_product_hot() {
+	register_post_type( 'san-pham-hot',
+		array(
+			'labels' => array(
+				'name' => __( 'San Pham Hot' ),
+				'singular_name' => __( 'San Pham Hot' )
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'san-pham-hot'),
+			'supports' => array('title','editor','thumbnail','page-attributes'),
+		)
+	);
+	flush_rewrite_rules( false );
+}
+
+function getPostViews($postID){
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0 View";
+    }
+    return $count.' Views';
+}
+
+// function to count views.
+function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+
+
+// Add it to a column in WP-Admin
+add_filter('manage_posts_columns', 'posts_column_views');
+add_action('manage_posts_custom_column', 'posts_custom_column_views',5,2);
+function posts_column_views($defaults){
+    $defaults['post_views'] = __('Views');
+    return $defaults;
+}
+function posts_custom_column_views($column_name, $id){
+	if($column_name === 'post_views'){
+        echo getPostViews(get_the_ID());
+    }
 }

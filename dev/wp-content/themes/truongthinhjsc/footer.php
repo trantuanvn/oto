@@ -1,3 +1,4 @@
+</div>
 <div id="footer">
          <div id="wrapper" class="container">
           <div style="color:#fff"><?php get_sidebar( 'sidebar-2' ); ?> aaa</div>
