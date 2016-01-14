@@ -13,21 +13,18 @@
                           <img id="slideImgVm" src="http://ordasvit.com/vehiclemanager16/components/com_vehiclemanager/photos/4E324BEF-AC55-4FDD-AEE2-B646855F2044_Ford_500_1350.jpg" alt="img"/>
                           <div id="captionSlide">
                              <div class="slide-title">FORD NEW KUGA</div>
-                             <div class="slide-button"><a href="http://ordasvit.com/vehiclemanager16/index.php/component/vehiclemanager/155/view_vehicle/46/Smart/2/ford-new-kuga?Itemid=155"  class="btn btn-primary">Read More</a></div>
                           </div>
                        </div>
                        <div class="swiper-slide">
                           <img id="slideImgVm" src="http://ordasvit.com/vehiclemanager16/components/com_vehiclemanager/photos/543EEB61-3F53-4839-1ED3-1795C99B3C7D_chevrolet_500_1350.jpg" alt="img"/>
                           <div id="captionSlide">
                              <div class="slide-title">Chevrolet Comaro</div>
-                             <div class="slide-button"><a href="http://ordasvit.com/vehiclemanager16/index.php/component/vehiclemanager/155/view_vehicle/49/Sport/8/chevrolet-comaro?Itemid=155"  class="btn btn-primary">Read More</a></div>
                           </div>
                        </div>
                        <div class="swiper-slide">
                           <img id="slideImgVm" src="http://ordasvit.com/vehiclemanager16/components/com_vehiclemanager/photos/5C43905F-7DBD-0285-060A-3E3C33F1EA31_Mer_500_1350.jpg" alt="img"/>
                           <div id="captionSlide">
                              <div class="slide-title">Mercedes-Benz S Class</div>
-                             <div class="slide-button"><a href="http://ordasvit.com/vehiclemanager16/index.php/component/vehiclemanager/155/view_vehicle/50/Sale/9/mercedes-benz-s-class?Itemid=155"  class="btn btn-primary">Read More</a></div>
                           </div>
                        </div>
                     </div>
@@ -107,7 +104,7 @@
                     text-align: center;
                     margin-bottom: 10px;
                     }
-                    .block_list_in img {}
+                    .block_list_in img { height: 280px;}
                     .block_list_model {}
                     .priceAndHits {}
                     .block_list_price {}
@@ -162,7 +159,7 @@
                                 </p>
                              </div>
                              <div class="block_list_hits">
-                                <p>Hits: <?php echo getPostViews(get_the_ID()); ?></p>
+                                <p>Xem: <?php echo getPostViews(get_the_ID()); ?></p>
                                 <div class="price-shadow"></div>
                              </div>
                           </div>                          
@@ -198,14 +195,21 @@
   <div class="information_top">
      <div id="wrapper" class="container">
         <div class="span7">
-           <div class="moduletable">
+           <div class="about-block-home">
               <h3>Giới thiệu công ty</h3>
               <div class="custom">
-                 <img src="/vehiclemanager16/images/13.jpg" alt="" />
+              <?php 
+                query_posts(array('cat' =>6, 'posts_per_page' =>3 , 'order' => DESC, 'paged' => get_query_var('paged') ));
+                $cnt = 0;
+                while (have_posts()) : the_post();
+                $cnt++;
+              ?>
+                 <img src="<?php echo $post_thumbnail_url; ?>" alt="" />
                  <div class="first">
                     <?php the_field('tom_tat'); ?>
                     <a href="<?php the_field('link'); ?>" class="btn btn-primary">Chi tiết</a>
                  </div>
+              <?php endwhile; ?>
               </div>
            </div>
         </div>

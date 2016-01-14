@@ -7,7 +7,7 @@
       <meta http-equiv="content-type" content="text/html; charset=utf-8" />
       <meta name="description" content="Autoseller" />
       <meta name="generator" content="Joomla! - Open Source Content Management" />
-      <title><?php wp_title() ?></title>
+      <title>Đại lý phân phối của Tập Đoàn Xe Tải Hạng Nặng</title>
       <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/bootstrap.css" type="text/css" />
       <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/bootstrap-responsive.css" type="text/css" />
       <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/font-awesome.css" type="text/css" />
@@ -40,14 +40,14 @@
    </head>
    <style type="text/css">
       body {
-      font-family:Open Sans, sans-serif;
+      font-family:Arial, sans-serif;
       background-color:#fff; 
       background-image: url('/vehiclemanager16/templates/autoseller/images/');
       }
       a {
       color:#92999E;
       text-decoration:none;
-      font-family:Open Sans, sans-serif;
+      font-family:Arial, sans-serif;
       }
       a:hover {
       color:red;
@@ -56,7 +56,7 @@
       .top_menu .navbar li a {
       color:#92999E;
       text-decoration:none;
-      font-family:Open Sans, sans-serif;
+      font-family:Arial, sans-serif;
       }
       .top_menu .navbar li a:hover {
       color:#000000;
@@ -65,7 +65,7 @@
       .main_menu .navbar li a {
       color:#92999E;
       text-decoration:none;
-      font-family:Open Sans, sans-serif;
+      font-family:Arial, sans-serif;
       }
       .main_menu .navbar li a:hover {
       color:#000000;
@@ -74,18 +74,18 @@
       .footer_menu .navbar li a {
       color:#fff;
       text-decoration:none;
-      font-family:Open Sans, sans-serif;
+      font-family:Arial, sans-serif;
       }
       .footer_menu .navbar li a:hover {
       color:red;
       text-decoration:none;
       }
-      h1 {font-family:Open Sans, sans-serif;}
-      h2 {font-family:Open Sans, sans-serif;}
-      h3 {font-family:Open Sans, sans-serif;}
-      h4 {font-family:Open Sans, sans-serif;}
-      h5 {font-family:Open Sans, sans-serif;}
-      h6 {font-family:Open Sans, sans-serif;}
+      h1 {font-family:Arial, sans-serif;}
+      h2 {font-family:Arial, sans-serif;}
+      h3 {font-family:Arial, sans-serif;}
+      h4 {font-family:Arial, sans-serif;}
+      h5 {font-family:Arial, sans-serif;}
+      h6 {font-family:Arial, sans-serif;}
    </style>
    <body>
       <div class="header">
@@ -96,34 +96,21 @@
                      <div class="maps">
                         <div class="moduletable">
                            <div class="custom"  >
-                              <p><i class="fa fa-map-marker"></i>4538 MARINE DR, Burnaby,</p>
+                              <p><i class="fa fa-map-marker"></i>123 Nguyễn Trãi, Quận 5, Hồ Chí Minh</p>
                            </div>
                         </div>
                      </div>
                      <div class="number">
                         <div class="moduletable">
                            <div class="custom"  >
-                              <p><i class="fa fa-mobile fa-lg"></i>4538-777-777</p>
+                              <p><i class="fa fa-mobile fa-lg"></i>0908-448-606</p>
                            </div>
                         </div>
                      </div>
                      <div class="masege">
                         <div class="moduletable">
                            <div class="custom"  >
-                              <p><i class="fa fa-envelope-o fa-lg"></i>4538 MARINE DR, Burnaby,</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="span4">
-                     <div id="Search" class="span12">
-                        <div class="moduletable">
-                           <div class="search">
-                              <form action="/vehiclemanager16/index.php" method="post" class="form-inline">
-                                 <label for="mod-search-searchword" class="element-invisible">Search...</label> <input name="searchword" id="mod-search-searchword" maxlength="20"  class="inputbox search-query" type="text" size="20" value="Search..."  onblur="if (this.value=='') this.value='Search...';" onfocus="if (this.value=='Search...') this.value='';" /> <button class="button btn btn-primary" onclick="this.form.searchword.focus();"><i class='fa fa-search'></i></button>		<input type="hidden" name="task" value="search" />
-                                 <input type="hidden" name="option" value="com_search" />
-                                 <input type="hidden" name="Itemid" value="101" />
-                              </form>
+                              <p><i class="fa fa-envelope-o fa-lg"></i>info@yourdomain.com</p>
                            </div>
                         </div>
                      </div>

@@ -30,7 +30,7 @@ get_header();
                                         <figure class="span3">
                                             <div class="item_img">
                                                 <a href="<?php the_permalink(); ?>">
-                                                    <?php the_post_thumbnail('thumb'); ?>
+                                                    <?php the_post_thumbnail('medium'); ?>
                                                 </a>
                                             </div>
                                         </figure>
@@ -46,9 +46,11 @@ get_header();
                                             <div class="item_introtext">
                                                 <?php the_field('tom_tat'); ?>
                                             </div>
-                                            <a class="btn btn-info" href="<?php the_permalink(); ?>">
-                                                <span>Xem thêm</span>
-                                            </a>
+                                            <div class="first">
+                                                <a class="btn btn-primary" href="<?php the_permalink(); ?>">
+                                                    <span>Xem thêm</span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </article>
                                 </div>

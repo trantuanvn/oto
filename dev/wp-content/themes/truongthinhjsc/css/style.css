@@ -718,7 +718,6 @@ input.invalid {border-color: #FF0000 !important;}
   font-size: 1.5em;
   text-transform: uppercase;
   color: #444;
-  font-weight: 900;
   padding: 8px 0 11px 0;
   border-bottom: 1px dotted #bbb;
 }
@@ -739,7 +738,6 @@ input.invalid {border-color: #FF0000 !important;}
 
 .Local_about h3 {
   font-size: 2em;
-  font-weight: 900;
   text-align: center;
   margin: 50px 0 43px 0;
   text-transform: uppercase;
@@ -747,7 +745,6 @@ input.invalid {border-color: #FF0000 !important;}
 
 .information_top h3 {
   font-size: 2em;
-  font-weight: 900;
   margin: 50px 0 43px 0;
   text-transform: uppercase;
 }
@@ -1024,7 +1021,7 @@ div.information_top h3 {
   font-size: 27px !important;
   text-transform: uppercase;
   font-weight: 900 !important;
-  font-family: "Open Sans", sans-serif;
+  font-family: Arial, sans-serif;
   color: #333 !important;
 }
 
@@ -1232,3 +1229,9 @@ a {
   transition: all 0.5s ease;
 
 }
+.about-block-home { padding-left: 3%; }
+.item {
+  margin-bottom: 2%;
+  overflow: hidden;
+}
+.item .first { margin-left: 0; }
