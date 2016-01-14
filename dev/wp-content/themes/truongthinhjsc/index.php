@@ -174,20 +174,6 @@
                     </div>
                  </div>
               </div>
-              <div class="moduletable">
-                 <div class="custom"  >
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- autoseller responsive pos0 -->
-                    <ins class="adsbygoogle"
-                       style="display:block"
-                       data-ad-client="ca-pub-5549008594502436"
-                       data-ad-slot="1916974542"
-                       data-ad-format="auto"></ins>
-                    <script>
-                       (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                 </div>
-              </div>
            </div>
         </div>
      </div>
@@ -213,18 +199,12 @@
      <div id="wrapper" class="container">
         <div class="span7">
            <div class="moduletable">
-              <h3>About Us</h3>
-              <div class="custom"  >
+              <h3>Giới thiệu công ty</h3>
+              <div class="custom">
                  <img src="/vehiclemanager16/images/13.jpg" alt="" />
                  <div class="first">
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
-                    <ul>
-                       <li><span><i class="fa fa-caret-right"></i>The largest selection of cars</span></li>
-                       <li><span><i class="fa fa-caret-right"></i>Convenient location</span></li>
-                       <li><span><i class="fa fa-caret-right"></i>Responsible personnel</span></li>
-                       <li><span><i class="fa fa-caret-right"></i>Quality guarantee</span></li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">Get Started</a>
+                    <?php the_field('tom_tat'); ?>
+                    <a href="<?php the_field('link'); ?>" class="btn btn-primary">Chi tiết</a>
                  </div>
               </div>
            </div>
@@ -232,49 +212,15 @@
         <div class="span5">
            <div class="local_mapp">
               <div class="moduletable">
-                 <h3>Location Map</h3>
                  <style>
                     #map_canvas205782391 img {
                     max-width: none !important;
                     }
                  </style>
-                 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false" ></script>
-                 <noscript>Javascript is required to use Google Maps location Joomla module <a href="http://ordasoft.com/location-map.html">Google Maps location module
-                    for Joomla </a>, 
-                    <a href="http://ordasoft.com/location-map.html">Google Maps location module
-                    for Joomla</a>
-                 </noscript>
-                 <script type="text/javascript">
-                    window.onload = function() {
-                         var map;
-                         var marker = new Array();
-                         var infowindow = new Array();
-                         var myOptions = {
-                           zoom: 9,
-                           center: new google.maps.LatLng(50, 36.26),
-                                         mapTypeId: google.maps.MapTypeId.ROADMAP
-                         };
-                         var map = new google.maps.Map(document.getElementById("map_canvas205782391"), myOptions);
-                    
-                                 marker.push(new google.maps.Marker({
-                            position: new google.maps.LatLng(50, 36.25),
-                            map: map
-                      }));
-                    
-                      infowindow.push(new google.maps.InfoWindow({
-                      content: "Orda Soft"
-                      }));
-                      
-                      google.maps.event.addListener(marker[0], 'mouseover', function() {
-                            infowindow[0].close(map,marker[0]);
-                        infowindow[0].open(map,marker[0]);
-                      });
-                         };
-                    
-                 </script>
-                 <div id="map_canvas205782391" style=
+                 <div class="map-block" style=
                     "width: 470px; height: 300px;
                     float: rigth;" >
+                    <?php dynamic_sidebar( 'home_right_bottom' ); ?>
                  </div>
                  <br>
               </div>

@@ -11,14 +11,14 @@ get_header();
             <div class="content-inner row">   
                 <div class="span12">
                     <main role="main">
-                        <section class="page-blog page-blog">
+                        <section class="page-blog page-blog news-page">
                             <header class="page_header">
                                 <h3 class="visible-first visible">
                                 <span>Tin tức</span> 
                                 </h3>	
                             </header>
                             <?php 
-                                query_posts(array('cat' =>3, 'posts_per_page' =>10 , 'order' => DESC, 'paged' => get_query_var('paged') ));
+                                query_posts(array('cat' =>3, 'posts_per_page' =>5, 'order' => DESC, 'paged' => get_query_var('paged') ));
                                 $cnt = 0;
                                 while (have_posts()) : the_post();
                                 $cnt++;
@@ -27,12 +27,14 @@ get_header();
                                 <div class="span12">
                                     <article class="item">
                                     <!-- Intro image -->
-                                        <figure class="span4">
-                                            <a href="<?php the_permalink(); ?>">
-                                                <?php the_post_thumbnail('thumb'); ?>
-                                            </a>
+                                        <figure class="span3">
+                                            <div class="item_img">
+                                                <a href="<?php the_permalink(); ?>">
+                                                    <?php the_post_thumbnail('thumb'); ?>
+                                                </a>
+                                            </div>
                                         </figure>
-                                        <div class="info span8">
+                                        <div class="info span9">
                                             <header class="item_header">
                                                 <h4 class="item_title visible-first visible">       
                                                     <a href="<?php the_permalink(); ?>"> 

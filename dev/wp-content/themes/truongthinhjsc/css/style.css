@@ -1195,3 +1195,40 @@ div[class^="componentheading"] {
   margin-bottom: 30px;
   filter: none !important;
 }
+.item_img a img {
+
+  opacity: 0.99;
+
+  -webkit-transition: all 0.5s linear;
+
+  -moz-transition: all 0.5s linear;
+
+  -o-transition: all 0.5s linear;
+
+  transition: all 0.5s linear;
+
+}
+.item_img a:hover img{
+  transform: scale(1.1) !important;
+
+  -o-transform: scale(1.1) !important;
+
+  -moz-transform: scale(1.1) !important;
+
+  -webkit-transform: scale(1.1) !important;
+
+  -ms-transform: scale(1.1) !important;
+
+  opacity: 1 !important;
+}
+a {
+
+  -webkit-transition: all 0.5s ease;
+
+  -moz-transition: all 0.5s ease;
+
+  -o-transition: all 0.5s ease;
+
+  transition: all 0.5s ease;
+
+}

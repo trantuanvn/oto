@@ -1,0 +1,4 @@
+﻿1. Homepage
+ - Block1:  Feature : 3-5 tam, url tu nhap
+ - Block2 : 3 sp San pham giam gia
+ - Block 3 : all san pham
