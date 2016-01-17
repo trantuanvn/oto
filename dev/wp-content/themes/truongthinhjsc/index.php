@@ -138,7 +138,7 @@
                           $post_thumbnail_url = wp_get_attachment_url( $post_thumbnail_id );      
                           //the_ID();
                       ?>
-                        <div class="block_list_in <?php echo $last; ?>" style="background:none; float:left;">         
+                        <div class="block_list_in <?php echo $last; ?>">         
                           <div class="block_list_img">
                             <a href="<?php the_permalink();?>" style="height:280px">
                               <img src="<?php echo $post_thumbnail_url; ?>" alt="<?php the_title();?>"/>

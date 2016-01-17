@@ -1235,3 +1235,15 @@ a {
   overflow: hidden;
 }
 .item .first { margin-left: 0; }
+.block_list_in{ 
+  float: left;
+}
+@media(max-width: 768px) {
+ .block_list_in{ 
+    float: none;
+  }
+  .information_top .span7 {
+    float: none;
+    width: 100%; 
+  } 
+}
