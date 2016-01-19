@@ -3,30 +3,22 @@
      <div class="span12">
         <div class="moduletable">
            <div id="vmTouchSlider94" class="ordasoft">
-              <div class="vehicleSlider  horizontal" style="max-width: 1350px;">
+              <div class="vehicleSlider  horizontal">
                  <span class="arrow-left"></span>
                  <span class="arrow-right"></span>
-                 <div class="swiper-container" style="height: 500px;">
-                    <span id="loaderGif" style="display:block;"></span>
-                    <div class="swiper-wrapper" style="visibility:hidden;">
+                 <div class="swiper-container">
+                    <span id="loaderGif"></span>
+                    <div class="swiper-wrapper">
+                      <?php
+                        $gallery_id =1;
+                        $nng_object = new nggdb(); 
+                        $gallery_images = $nng_object->get_gallery($gallery_id);  
+                      ?>
+                      <?php $i=1; foreach($gallery_images as $key=>$val):?>
                        <div class="swiper-slide">
-                          <img id="slideImgVm" src="http://ordasvit.com/vehiclemanager16/components/com_vehiclemanager/photos/4E324BEF-AC55-4FDD-AEE2-B646855F2044_Ford_500_1350.jpg" alt="img"/>
-                          <div id="captionSlide">
-                             <div class="slide-title">FORD NEW KUGA</div>
-                          </div>
+                          <img id="slideImgVm" src="<?php echo $val->imageURL ?>" alt="img"/>
                        </div>
-                       <div class="swiper-slide">
-                          <img id="slideImgVm" src="http://ordasvit.com/vehiclemanager16/components/com_vehiclemanager/photos/543EEB61-3F53-4839-1ED3-1795C99B3C7D_chevrolet_500_1350.jpg" alt="img"/>
-                          <div id="captionSlide">
-                             <div class="slide-title">Chevrolet Comaro</div>
-                          </div>
-                       </div>
-                       <div class="swiper-slide">
-                          <img id="slideImgVm" src="http://ordasvit.com/vehiclemanager16/components/com_vehiclemanager/photos/5C43905F-7DBD-0285-060A-3E3C33F1EA31_Mer_500_1350.jpg" alt="img"/>
-                          <div id="captionSlide">
-                             <div class="slide-title">Mercedes-Benz S Class</div>
-                          </div>
-                       </div>
+                      <?php  $i++;  endforeach;?>
                     </div>
                  </div>
               </div>
@@ -221,9 +213,7 @@
                     max-width: none !important;
                     }
                  </style>
-                 <div class="map-block" style=
-                    "width: 470px; height: 300px;
-                    float: rigth;" >
+                 <div class="map-block">
                     <?php dynamic_sidebar( 'home_right_bottom' ); ?>
                  </div>
                  <br>

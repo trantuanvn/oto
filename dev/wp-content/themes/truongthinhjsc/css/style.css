@@ -1238,6 +1238,7 @@ a {
 .block_list_in{ 
   float: left;
 }
+.map-block { margin-right: 20px; }
 @media(max-width: 768px) {
  .block_list_in{ 
     float: none;
@@ -1246,4 +1247,7 @@ a {
     float: none;
     width: 100%; 
   } 
+}
+@media(max-width: 480px) {
+  .map-block { margin-right: 20px; }
 }

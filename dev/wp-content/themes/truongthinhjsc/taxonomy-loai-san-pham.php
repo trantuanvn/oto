@@ -4,7 +4,7 @@ $term   = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy
 $paged  = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $args = array( 
-    'post_type'         => 'san-pham',
+    'post_type'         => 'post',
     'loai-san-pham'     => $term->slug,
     'orderby'           => 'modified',
     'order'             => 'ASC',
@@ -13,6 +13,7 @@ $args = array(
 );
 
 $the_query = new WP_Query( $args );
+var_dump($args);
 ?>
 <div id="globalContent">
 	<div class="row-fluid">
