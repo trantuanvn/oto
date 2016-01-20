@@ -23,10 +23,56 @@
       <script src="js/idangerous-swiper.js" type="text/javascript"></script>
       <script type="text/javascript">
          jQuery(window).on('load',  function() {
-         				new JCaption('img.caption');
-         			});
+                     new JCaption('img.caption');
+                  });
            
       </script>
+      <script type="text/javascript">
+                  jQuery(window).load(function() {
+                  
+                     var mySwiper94 = new Swiper('#vmTouchSlider94 .swiper-container',{
+                             pagination: '#vmTouchSlider94 .swiperPagination',
+                             loop: true,
+                       mode:'horizontal',
+                       speed:500, 
+                       autoplay:3500,
+                       autoResize: true,
+                       DOMAnimation: true,
+                       preventLinks: true,
+                       grabCursor: false,
+                       createPagination: true,
+                       paginationClickable: true
+                     });
+                  
+                           jQuery('#vmTouchSlider94 .arrow-left').on('click', function() {
+                         mySwiper94.swipePrev();
+                       });
+                       jQuery('#vmTouchSlider94 .arrow-right').on('click', function() {
+                         mySwiper94.swipeNext();
+                       });
+                     
+                     setTimeout(
+                       function(){
+                         jQuery(".swiper-wrapper").css("visibility", "visible");
+                         jQuery("#loaderGif").css("display", "none");
+                       }, 1400);
+                  
+                       function vmSliderResize() {
+                           var heightImg = 0;
+                         jQuery("#vmTouchSlider94 .swiper-slide img#slideImgVm").css('height', 'auto');
+                           var vmImgHeight = jQuery('#vmTouchSlider94 .swiper-slide img#slideImgVm').height();
+                         jQuery("#vmTouchSlider94 .swiper-container").height(vmImgHeight);
+                         jQuery("#vmTouchSlider94 .vehicleSlider").height(vmImgHeight);
+                       } 
+                         // vmSliderResize();
+                  
+                       jQuery(window).resize(function() { 
+                         vmSliderResize(); 
+                       });
+                  
+                  });
+                  
+               </script>
       <script type="text/javascript"></script>
       <!--[if IE 7]> 
       <link type="text/css" rel="stylesheet" href="/vehiclemanager16/templates/autoseller/css/style_ie7.css" />
@@ -120,7 +166,7 @@
                         <div class="moduletable">
                            <div class="search">
                               <form action="/vehiclemanager16/index.php" method="post" class="form-inline">
-                                 <label for="mod-search-searchword" class="element-invisible">Search...</label> <input name="searchword" id="mod-search-searchword" maxlength="20"  class="inputbox search-query" type="text" size="20" value="Search..."  onblur="if (this.value=='') this.value='Search...';" onfocus="if (this.value=='Search...') this.value='';" /> <button class="button btn btn-primary" onclick="this.form.searchword.focus();"><i class='fa fa-search'></i></button>		<input type="hidden" name="task" value="search" />
+                                 <label for="mod-search-searchword" class="element-invisible">Search...</label> <input name="searchword" id="mod-search-searchword" maxlength="20"  class="inputbox search-query" type="text" size="20" value="Search..."  onblur="if (this.value=='') this.value='Search...';" onfocus="if (this.value=='Search...') this.value='';" /> <button class="button btn btn-primary" onclick="this.form.searchword.focus();"><i class='fa fa-search'></i></button>      <input type="hidden" name="task" value="search" />
                                  <input type="hidden" name="option" value="com_search" />
                                  <input type="hidden" name="Itemid" value="101" />
                               </form>
@@ -245,10 +291,10 @@
          <div class="span12">
             <div class="moduletable">
                <div id="vmTouchSlider94" class="ordasoft">
-                  <div class="vehicleSlider  horizontal" style="max-width: 1350px;">
+                  <div class="vehicleSlider  horizontal">
                      <span class="arrow-left"></span>
                      <span class="arrow-right"></span>
-                     <div class="swiper-container" style="height: 500px;">
+                     <div class="swiper-container">
                         <span id="loaderGif" style="display:block;"></span>
                         <div class="swiper-wrapper" style="visibility:hidden;">
                            <div class="swiper-slide">
@@ -277,52 +323,7 @@
                   </div>
                   <div class="swiperPagination"></div>
                </div>
-               <script type="text/javascript">
-                  jQuery(window).load(function() {
-                  
-                     var mySwiper94 = new Swiper('#vmTouchSlider94 .swiper-container',{
-                             pagination: '#vmTouchSlider94 .swiperPagination',
-                             loop: true,
-                       mode:'horizontal',
-                       speed:500, 
-                       autoplay:3500,
-                       autoResize: true,
-                       DOMAnimation: true,
-                       preventLinks: true,
-                       grabCursor: false,
-                       createPagination: true,
-                       paginationClickable: true
-                     });
-                  
-                           jQuery('#vmTouchSlider94 .arrow-left').on('click', function() {
-                         mySwiper94.swipePrev();
-                       });
-                       jQuery('#vmTouchSlider94 .arrow-right').on('click', function() {
-                         mySwiper94.swipeNext();
-                       });
                      
-                     setTimeout(
-                       function(){
-                         jQuery(".swiper-wrapper").css("visibility", "visible");
-                         jQuery("#loaderGif").css("display", "none");
-                       }, 1400);
-                  
-                       function vmSliderResize() {
-                           var heightImg = 0;
-                         jQuery("#vmTouchSlider94 .swiper-slide img#slideImgVm").css('height', 'auto');
-                           var vmImgHeight = jQuery('#vmTouchSlider94 .swiper-slide img#slideImgVm').height();
-                         jQuery("#vmTouchSlider94 .swiper-container").height(vmImgHeight);
-                         jQuery("#vmTouchSlider94 .vehicleSlider").height(vmImgHeight);
-                       } 
-                         // vmSliderResize();
-                  
-                       jQuery(window).resize(function() { 
-                         vmSliderResize(); 
-                       });
-                  
-                  });
-                  
-               </script>		
             </div>
          </div>
       </div>

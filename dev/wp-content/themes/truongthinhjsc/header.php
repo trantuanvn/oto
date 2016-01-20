@@ -27,6 +27,51 @@
          			});
            
       </script>
+      <script type="text/javascript">
+  jQuery(window).load(function() {
+  
+     var mySwiper94 = new Swiper('#vmTouchSlider94 .swiper-container',{
+       pagination: '#vmTouchSlider94 .swiperPagination',
+       loop: true,
+       mode:'horizontal',
+       speed:500, 
+       autoplay:3500,
+       autoResize: true,
+       DOMAnimation: true,
+       preventLinks: true,
+       grabCursor: false,
+       createPagination: true,
+       paginationClickable: true
+     });
+  
+           jQuery('#vmTouchSlider94 .arrow-left').on('click', function() {
+         mySwiper94.swipePrev();
+       });
+       jQuery('#vmTouchSlider94 .arrow-right').on('click', function() {
+         mySwiper94.swipeNext();
+       });
+     
+     setTimeout(
+       function(){
+         jQuery(".swiper-wrapper").css("visibility", "visible");
+         jQuery("#loaderGif").css("display", "none");
+       }, 1400);
+  
+       function vmSliderResize() {
+           var heightImg = 0;
+         jQuery("#vmTouchSlider94 .swiper-slide img#slideImgVm").css('height', 'auto');
+           var vmImgHeight = jQuery('#vmTouchSlider94 .swiper-slide img#slideImgVm').height();
+         jQuery("#vmTouchSlider94 .swiper-container").height(vmImgHeight);
+         jQuery("#vmTouchSlider94 .vehicleSlider").height(vmImgHeight);
+       } 
+         // vmSliderResize();
+       jQuery(window).resize(function() { 
+         vmSliderResize(); 
+       });
+  
+  });
+  
+</script>
       <script type="text/javascript"></script>
       <!--[if IE 7]> 
       <link type="text/css" rel="stylesheet" href="/vehiclemanager16/templates/autoseller/css/style_ie7.css" />

@@ -466,11 +466,28 @@ function create_product_hot() {
 		array(
 			'labels' => array(
 				'name' => __( 'San Pham Hot' ),
-				'singular_name' => __( 'San Pham Hot' )
+				'singular_name' => __( 'Sản phẩm nổi bật' )
 			),
 			'public' => true,
 			'has_archive' => true,
 			'rewrite' => array('slug' => 'san-pham-hot'),
+			'supports' => array('title','editor','thumbnail','page-attributes'),
+		)
+	);
+	flush_rewrite_rules( false );
+}
+
+add_action('init', 'create_product_features' );
+function create_product_features() {
+	register_post_type( 'san-pham-features',
+		array(
+			'labels' => array(
+				'name' => __( 'Sản phẩm tự chọn' ),
+				'singular_name' => __( 'Sản phẩm tự chọn' )
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'san-pham-features'),
 			'supports' => array('title','editor','thumbnail','page-attributes'),
 		)
 	);

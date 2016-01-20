@@ -702,7 +702,7 @@ input.invalid {border-color: #FF0000 !important;}
     top: 15% !important;
   }
 
-  .block_list .block_list_hits {bottom: 39%;}
+  .block_list .block_list_hits {bottom: 43%;}
 }
 
 .block_list_in {
@@ -1239,6 +1239,7 @@ a {
   float: left;
 }
 .map-block { margin-right: 20px; }
+.swiper-wrapper { height: 500px !important;}
 @media(max-width: 768px) {
  .block_list_in{ 
     float: none;
@@ -1247,7 +1248,17 @@ a {
     float: none;
     width: 100%; 
   } 
+  .swiper-wrapper { height: 400px !important;}
 }
 @media(max-width: 480px) {
   .map-block { margin-right: 20px; }
+  .swiper-wrapper { height: 200px !important;}
+}
+@media(max-width: 360px) {
+  .swiper-wrapper { height: 100px !important;}
+  .block_list .block_list_in img {
+    height: auto !important;
+    width: 100%;
+    min-height: 180px;  
+  }
 }
