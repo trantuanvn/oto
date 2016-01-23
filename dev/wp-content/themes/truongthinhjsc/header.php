@@ -141,21 +141,21 @@
                      <div class="maps">
                         <div class="moduletable">
                            <div class="custom"  >
-                              <p><i class="fa fa-map-marker"></i>123 Nguyễn Trãi, Quận 5, Hồ Chí Minh</p>
+                              <p><i class="fa fa-map-marker"></i>230b Nguyễn Văn Linh, P. Tân Thuận Tây, Quận 7, Tp HCM</p>
                            </div>
                         </div>
                      </div>
                      <div class="number">
                         <div class="moduletable">
                            <div class="custom"  >
-                              <p><i class="fa fa-mobile fa-lg"></i>0908-448-606</p>
+                              <p><i class="fa fa-mobile fa-lg"></i>090 962 38 65</p>
                            </div>
                         </div>
                      </div>
                      <div class="masege">
                         <div class="moduletable">
                            <div class="custom"  >
-                              <p><i class="fa fa-envelope-o fa-lg"></i>info@yourdomain.com</p>
+                              <p><i class="fa fa-envelope-o fa-lg"></i>namminhkhang230b@gmail.com</p>
                            </div>
                         </div>
                      </div>

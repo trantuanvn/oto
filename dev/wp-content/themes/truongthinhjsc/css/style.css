@@ -21,7 +21,7 @@ body {height: 100%; position:relative;}
 }
 
 #footer {
-  background: #222;
+  background: #0d122a;
   border-top: 1px solid #EAEAEA;
   padding: 60px 0 70px 0; 
   width: 100%;
@@ -37,7 +37,7 @@ body {height: 100%; position:relative;}
 
 /*____________________ TOP HEADER _______________________*/
 
-.top_header {background: #222;}
+.top_header {background: #0d122a;}
 
 .maps, .number, .masege {
   float: left;
@@ -335,7 +335,7 @@ body {height: 100%; position:relative;}
 
   .main_menu ul.menu > li a {display: block; }
      
-  .main_menu ul.menu > li.parent span.arrow {
+  .main_menu ul.menu > li.menu-item-has-children span.arrow {
     background: url("../images/arrow.png") no-repeat scroll 0 7px transparent;
     height: 20px;
     right: -5px;
@@ -344,7 +344,7 @@ body {height: 100%; position:relative;}
     width: 20px;
   }
 
-  .main_menu ul.menu li ul li.parent span.arrow {
+  .main_menu ul.menu li ul li.menu-item-has-children span.arrow {
     background: url("../images/arrow.png") no-repeat scroll 0 center transparent;
     height: 15px;
     position: absolute;
@@ -353,8 +353,8 @@ body {height: 100%; position:relative;}
     width: 30px;
   }
 
-  .main_menu ul.menu li.parent ul,
-  .main_menu ul.menu li ul li.parent ul {
+  .main_menu ul.menu li.menu-item-has-children ul,
+  .main_menu ul.menu li ul li.menu-item-has-children ul {
     background: none repeat scroll 0 0 transparent;
     border-left: medium none;
     border-top: medium none;
@@ -364,14 +364,14 @@ body {height: 100%; position:relative;}
     width: 100%;
   }
 
-  .main_menu ul.menu li.parent ul {left: 0; top: 0;}
+  .main_menu ul.menu li.menu-item-has-children ul {left: 0; top: 0;}
 
-  .main_menu ul.menu li ul li.parent ul {
+  .main_menu ul.menu li ul li.menu-item-has-children ul {
     left: 0 !important;
     top: 0 !important;
   }
 
-  .main_menu ul.menu li.parent ul li {
+  .main_menu ul.menu li.menu-item-has-children ul li {
     border-bottom: medium none;
     box-shadow: 0 0 0 transparent;
     clear: both;
@@ -380,21 +380,21 @@ body {height: 100%; position:relative;}
     width: 100%;
   }
 
-  .main_menu ul.menu li.parent ul li.lastChild {
+  .main_menu ul.menu li.menu-item-has-children ul li.lastChild {
     border-bottom: none; 
   }
 
-  .main_menu ul.menu li ul li.parent ul > li > a {
+  .main_menu ul.menu li ul li.menu-item-has-children ul > li > a {
     padding: 7px 10px 7px 30px;
   }
-  .main_menu ul.menu li ul li.parent ul > li > a:hover {
+  .main_menu ul.menu li ul li.menu-item-has-children ul > li > a:hover {
     padding: 7px 10px 7px 35px;
   }
-  .main_menu ul.menu li.parent ul li a:hover {
+  .main_menu ul.menu li.menu-item-has-children ul li a:hover {
     padding: 7px 10px 7px 20px;
   }
 
-  .main_menu ul.menu li.parent ul li a {
+  .main_menu ul.menu li.menu-item-has-children ul li a {
     float: none;
     margin: 0 15px 0 0;
     padding: 7px 10px 7px 15px;
@@ -533,7 +533,7 @@ input.invalid {border-color: #FF0000 !important;}
 @media (max-width: 1024px) {
 
   
-  .main_menu ul.menu li.lastChild ul li.parent span.arrow {
+  .main_menu ul.menu li.lastChild ul li.menu-item-has-children span.arrow {
       background: url("../images/arrow.png") no-repeat scroll 0 bottom transparent;
       height: 15px;
       position: absolute;
@@ -541,7 +541,7 @@ input.invalid {border-color: #FF0000 !important;}
       width: 20px;
   }
 
-  .main_menu ul.menu li.lastChild ul li.parent ul {
+  .main_menu ul.menu li.lastChild ul li.menu-item-has-children ul {
       left: inherit;
       right: 100%; 
       top: -2px;
@@ -558,7 +558,7 @@ input.invalid {border-color: #FF0000 !important;}
   .block_list_in {width: 293px !important;}
 
   .block_list .block_list_in img {
-    height: auto !important;
+    /*height: auto !important;*/
     width: 100%;
   }
 
@@ -685,6 +685,7 @@ input.invalid {border-color: #FF0000 !important;}
 
   #contentBox #list, #contentBox #gallery .okno_V {
     width: 100%;
+    float: none;
   }
 
   #contentBox #list, #contentBox #gallery {padding: 0;}
@@ -696,6 +697,9 @@ input.invalid {border-color: #FF0000 !important;}
    .vehicleSlider #captionSlide {top: 25% !important;}
 }
 
+@media (max-width: 360px) {
+  .block_list .block_list_hits {bottom: 43%;}
+}
 @media (max-width: 320px) {
   .vehicleSlider #captionSlide {
     width: 60% !important;
@@ -992,9 +996,9 @@ div.information_top h3 {
   font-size: 1.5em;
   text-transform: uppercase;
   color: #444;
-  font-weight: 900;
   padding: 8px 0 11px 0;
   border-bottom: 1px dotted #bbb;
+  line-height: 1.2em;
 }
 
 .okno_V .textvehicle .price {
@@ -1261,4 +1265,47 @@ a {
     width: 100%;
     min-height: 180px;  
   }
+}
+#list img.little{
+    /*height: 280px;
+    width:370px;*/
+}
+.okno_V {
+    width: 380px;
+    /*height: 370px;*/
+    height: auto;
+}
+.okno_V img {
+    max-height: 280px;
+}
+.okno_V .textvehicle {
+    width:370px;
+}
+#gallery ul {
+  font-size: 0;
+}
+#gallery ul li {
+  display: inline-block;
+  font-size: 16px;
+  vertical-align: top; 
+}
+@media( max-width:768px){
+   .map-block{ 
+     width: 620px; 
+     height: 300px;
+   }
+#gallery ul li { width: 45%; float: left; margin-right: 10px; }
+#gallery .okno_V img { max-width: 100%; }
+
+}
+@media( max-width:640px){
+   .map-block{ width: 560px; }
+#gallery ul li { width: 100%; float: none;}
+#gallery .okno_V img { width: 100%; }
+}
+@media( max-width:568px){
+   .map-block{ 
+     width: 400px;
+     height: auto; 
+   }
 }

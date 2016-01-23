@@ -143,3 +143,6 @@ div[id^=vmTouchSlider] .swiperPagination span {
     top: 0;
     width: 31px;
 }
+@media only screen and (max-width: 480px){
+  .swiper-container{ height: 200px !important;}
+}

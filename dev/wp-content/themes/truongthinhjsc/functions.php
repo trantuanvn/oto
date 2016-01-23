@@ -409,7 +409,7 @@ add_filter('category_rewrite_rules' , 'mp_add_rules' ) ;
 
 function mp_add_rules($rules)
 {
-	$taxonomies = array('loai-san-pham','loai-tin-tuc');
+	$taxonomies = array('loai-san-pham');
 	foreach($taxonomies as $taxonomy)
 	{
 		$categories = get_terms($taxonomy, array('hide_empty' => false));
@@ -460,7 +460,7 @@ function create_product_category() {
 	flush_rewrite_rules( false );
 }
 
-add_action('init', 'create_product_hot' );
+/*add_action('init', 'create_product_hot' );
 function create_product_hot() {
 	register_post_type( 'san-pham-hot',
 		array(
@@ -493,7 +493,7 @@ function create_product_features() {
 	);
 	flush_rewrite_rules( false );
 }
-
+*/
 function getPostViews($postID){
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
